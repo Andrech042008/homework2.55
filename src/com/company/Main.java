@@ -30,8 +30,8 @@ public class Main {
            //список2 добавили ввод
            spisok2.add(enter);
        }
-        System.out.println("1 spisok: " + spisok1 );
-        System.out.println("2 spisok: " + spisok2 );
+        printList(spisok1);
+        printList(spisok2);
         //перевернули список
         Collections.reverse(spisok2);
        int i =0;
@@ -44,7 +44,8 @@ public class Main {
            //прибовляет по 1
            i++;
         }
-        System.out.println("3 spisok: " + spisok3);
+        System.out.println("___________");
+        printList(spisok3);
        //отсортировали ро каличеству элементов
        Collections.sort(spisok3, new Comparator<String>() {
            @Override
@@ -52,10 +53,18 @@ public class Main {
                return o1.length() - o2.length();
            }
        });
-        System.out.println(spisok3 +"отсортированный 3 spisok");
+        System.out.println("__________________-");
+        printList(spisok3);
 
 
 
 
+    }
+
+    private static void printList(ArrayList<String> spisok) {
+        Iterator<?>iterator=spisok.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
     }
 }
